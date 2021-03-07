@@ -3,6 +3,7 @@
     <Header />
     <h2 class="title">用户快捷登录</h2>
     <Info />
+
   </div>
 </template>
 

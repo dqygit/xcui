@@ -8,10 +8,12 @@
       <div
         class="backs"
         slot="back-icon"
+        @click="backHandle"
       ></div>
       <div
         class="registerTitle"
         slot="more-icon"
+        @click="registerHandle"
       >
         注册
       </div>
@@ -21,7 +23,16 @@
 
 <script>
 export default {
-
+  methods: {
+    registerHandle () {
+      this.$router.push({
+        path: '/register'
+      })
+    },
+    backHandle () {
+      this.$router.go(-1)
+    }
+  }
 }
 </script>
 
@@ -29,7 +40,7 @@ export default {
 /deep/.nut-navbar {
   height: 88px;
   line-height: 88px;
-  font-size: 30px;
+
   .back {
     width: 22px;
     height: 22px;
@@ -37,8 +48,13 @@ export default {
     transform: rotateZ(45deg);
     border-left: 1px solid #000;
     border-bottom: 1px solid #000;
+    .backs {
+      width: 100%;
+      height: 100%;
+    }
   }
   .registerTitle {
+    font-size: 30px;
     margin-right: 20px;
     color: #099fde;
   }
